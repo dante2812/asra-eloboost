@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>ASRA ELOBOOST | League of Legends Koçluk</title>
+<style>
+:root{--red:#f01824;--red2:#a9000b;--bg:#080809;--panel:#111113;--muted:#aaa;--line:#3a171a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#f5f5f5;font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#090909ed;border-bottom:1px solid #541116;backdrop-filter:blur(12px)}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:1000;font-style:italic;letter-spacing:1px;font-size:25px;line-height:.85}.logo span{display:block;color:var(--red);font-size:12px;letter-spacing:4px;margin-top:7px}
+.links{display:flex;gap:25px;color:#ddd;font-size:14px}.links a:hover{color:var(--red)}
+.btn{display:inline-block;background:var(--red);padding:13px 20px;border-radius:7px;font-weight:800;color:white;border:1px solid var(--red);cursor:pointer;box-shadow:0 0 22px #f0182440}
+.btn.alt{background:transparent;border-color:#8b2027;box-shadow:none}.btn:hover{filter:brightness(1.15)}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 78% 40%,#671016 0,transparent 34%),linear-gradient(110deg,#090909 15%,#18090b 60%,#080809)}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 70px,#ff17200a 71px 73px)}
+.hero-in{position:relative;z-index:1;min-height:490px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;padding:65px 0}
+.kicker{color:#ddd;letter-spacing:6px;font-size:12px}.hero h1{font-size:clamp(48px,8vw,94px);line-height:.82;margin:22px 0 18px;font-weight:1000;font-style:italic;letter-spacing:-4px;text-shadow:4px 5px #000}
+.hero h1 span{display:block;color:var(--red);font-size:.82em;letter-spacing:-2px}.tag{letter-spacing:5px;color:#ddd;font-size:12px}
+.lead{max-width:520px;color:#c7c7c7;line-height:1.7}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.emblem{height:330px;display:grid;place-items:center;position:relative}.emblem:before{content:"";position:absolute;width:270px;height:270px;border-radius:50%;background:radial-gradient(circle,#f0182440,transparent 68%);filter:blur(15px)}
+.crest{position:relative;width:230px;height:260px;display:grid;place-items:center;color:#ff2935;font-size:180px;font-weight:900;text-shadow:0 0 30px #f01824,0 0 70px #f0182470;clip-path:polygon(50% 0,94% 23%,83% 78%,50% 100%,17% 78%,6% 23%);border:0;background:linear-gradient(145deg,#ff555d,#5d0008 55%,#170608);filter:drop-shadow(0 0 25px #e90018)}
+.crest:after{content:"A";position:absolute;color:#090909;font-size:155px;font-style:italic;text-shadow:2px 2px #ff4a52;transform:translateY(-4px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#401216;border-bottom:1px solid #401216}.stat{background:#0d0d0e;padding:22px;text-align:center}.stat b{display:block;color:var(--red);margin-bottom:6px}.stat small{color:#aaa}
+section{padding:72px 0}.section-k{text-align:center;color:var(--red);letter-spacing:5px;font-size:12px;font-weight:bold}.section-title{text-align:center;font-size:30px;margin:12px 0 35px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#151516,#0c0c0d);border:1px solid #4b1a1e;border-radius:12px;padding:25px;min-height:210px}.card .symbol{font-size:32px;color:var(--red)}.card h3{margin:15px 0 9px}.card p{color:#aaa;line-height:1.6;font-size:14px}.card a{color:#ff3a44;font-weight:bold;font-size:14px}
+.notice{margin:28px auto 0;max-width:850px;color:#999;font-size:12px;line-height:1.6;text-align:center}
+.order{background:linear-gradient(180deg,#10090a,#090909);border-top:1px solid #381116;border-bottom:1px solid #381116}
+form{max-width:700px;margin:auto;background:#111;padding:26px;border:1px solid #4b1a1e;border-radius:12px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:13px;color:#ccc;display:grid;gap:8px}input,select,textarea{width:100%;background:#080809;border:1px solid #442025;color:white;padding:13px;border-radius:6px;font:inherit}textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}.result{display:none;padding:13px;border:1px solid #5d262b;border-radius:6px;color:#ddd;line-height:1.5}
+footer{padding:30px 0;color:#777;font-size:12px;text-align:center}
+@media(max-width:760px){.links{display:none}.hero-in{grid-template-columns:1fr;padding:55px 0}.emblem{height:190px}.crest{transform:scale(.65)}.cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{padding:15px}form{grid-template-columns:1fr}.full{grid-column:auto}.hero h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#">ASRA<span>ELOBOOST</span></a>
+<div class="links"><a href="#anasayfa">Ana Sayfa</a><a href="#hizmetler">Hizmetler</a><a href="#siparis">Talep Oluştur</a><a href="#hakkinda">Hakkımızda</a></div>
+<a class="btn" href="#siparis">Bize Ulaş</a>
+</nav></div></header>
+<main>
+<div class="hero" id="anasayfa"><div class="wrap hero-in">
+<div><div class="kicker">LEAGUE OF LEGENDS • PLAYER DEVELOPMENT</div>
+<h1>ASRA <span>ELOBOOST</span></h1>
+<div class="tag">RISE ABOVE YOUR LIMITS</div>
+<p class="lead">Oyununu bir üst seviyeye taşı. Kişisel koçluk, maç analizi ve gelişim odaklı çalışmalarla daha bilinçli oyna.</p>
+<div class="actions"><a class="btn" href="#siparis">Talep Oluştur&nbsp; →</a><a class="btn alt" href="#hizmetler">Hizmetleri İncele</a></div>
+</div><div class="emblem"><div class="crest"></div></div>
+</div></div>
+<div class="stats"><div class="stat"><b>🎯 Kişisel Gelişim</b><small>Hedeflerine uygun çalışma</small></div><div class="stat"><b>⚔️ Rekabetçi Oyun</b><small>Karar ve mekanik analizi</small></div><div class="stat"><b>📈 Ölçülebilir İlerleme</b><small>Gelişimini birlikte takip et</small></div></div>
+<section id="hizmetler"><div class="wrap"><div class="section-k">HİZMETLERİMİZ</div><h2 class="section-title">HEDEFİNE GİDEN YOL</h2>
+<div class="cards">
+<article class="card"><div class="symbol">♛</div><h3>Birebir Koçluk</h3><p>Oyun içi kararlarını, koridor planını ve makro oyununu birlikte geliştirelim.</p><a href="#siparis">Detaylı talep →</a></article>
+<article class="card"><div class="symbol">◈</div><h3>VOD Analizi</h3><p>Maç kayıtlarını inceleyip güçlü yönlerini ve geliştirebileceğin noktaları belirleyelim.</p><a href="#siparis">Detaylı talep →</a></article>
+<article class="card"><div class="symbol">⚡</div><h3>Gelişim Programı</h3><p>Rolüne ve hedef ligine göre kişisel antrenman ve çalışma planı oluşturalım.</p><a href="#siparis">Detaylı talep →</a></article>
+</div>
+<p class="notice">ASRA bağımsız bir oyuncu gelişim konseptidir; Riot Games veya League of Legends ile bağlantılı ya da onlar tarafından onaylanmış değildir. Hesap paylaşımı veya hesap üzerinde başka birinin oynamasını gerektiren hizmetler sunulmaz.</p>
+</div></section>
+<section class="order" id="siparis"><div class="wrap"><div class="section-k">İLK ADIMINI AT</div><h2 class="section-title">TALEP OLUŞTUR</h2>
+<form id="requestForm">
+<label>Adın<input name="name" required placeholder="Adın"></label>
+<label>İletişim e-postan<input name="email" type="email" required placeholder="ornek@mail.com"></label>
+<label>Oynadığın rol<select name="role"><option>Mid</option><option>ADC</option><option>Jungle</option><option>Top</option><option>Support</option></select></label>
+<label>İlgilendiğin hizmet<select name="service"><option>Birebir Koçluk</option><option>VOD Analizi</option><option>Gelişim Programı</option></select></label>
+<label class="full">Hedefin ve notların<textarea name="notes" placeholder="Mevcut seviyeni ve hedefini anlat..."></textarea></label>
+<button class="btn full" type="submit">Talep Özeti Oluştur</button>
+<div class="result full" id="result" role="status"></div>
+</form><p class="notice">Bu ilk sürüm bir taslaktır. Form bilgileri sunucuya gönderilmez veya kaydedilmez; gerçek sipariş almak için güvenli bir form/veritabanı ve iletişim altyapısı ayrıca bağlanmalıdır.</p>
+</div></section>
+<section id="hakkinda"><div class="wrap"><div class="section-k">ASRA ELOBOOST</div><h2 class="section-title">DAHA BİLİNÇLİ OYNA. DAHA İYİ GELİŞ.</h2><p class="lead" style="margin:auto;text-align:center">Amacımız yalnızca maç kazanmak değil; oyunu anlamanı, hatalarını görmeni ve kendi seviyeni sürdürülebilir biçimde yükseltmeni sağlamak.</p></div></section>
+</main>
+<footer><div class="wrap">© 2026 ASRA ELOBOOST • Bağımsız oyuncu gelişim platformu</div></footer>
+<script>
+document.getElementById('requestForm').addEventListener('submit',function(e){
+ e.preventDefault();const d=new FormData(this);const r=document.getElementById('result');
+ r.style.display='block';r.textContent='Talep önizlemesi hazır: '+d.get('name')+' • '+d.get('service')+' • '+d.get('role')+'. Bu demo form herhangi bir yere gönderilmedi.';
+});
+</script>
+</body></html>
